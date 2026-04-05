@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online | Coffee & Friends</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Coffee <span>&</span> Friends</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#location">Visit Us</a></li>
+                <li><a href="order.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; color: var(--bg-dark);">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="order-header">
+        <div class="container">
+            <h1 class="section-title">Order Online</h1>
+            <p>Freshly brewed and ready for pickup or delivery.</p>
+        </div>
+    </div>
+
+    <div class="order-container">
+        <div class="menu-list" id="menuList">
+            <!-- Items injected by JS -->
+        </div>
+
+        <aside class="cart-sidebar glass-panel">
+            <h3>Your Cart</h3>
+            <div class="cart-items" id="cartItems">
+                <p style="color: var(--text-secondary); text-align: center; margin-top: 2rem;">Your cart is empty.</p>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">£0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" style="margin-top: 1.5rem;" id="checkoutBtn" disabled>Proceed to Checkout</button>
+        </aside>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2 class="section-title" style="font-size: 2rem;">Checkout</h2>
+            
+            <div class="checkout-tabs">
+                <button class="tab-btn active" data-tab="card">Credit/Debit Card</button>
+                <button class="tab-btn" data-tab="bank">Bank Transfer</button>
+            </div>
+
+            <div class="tab-content active" id="tab-card">
+                <div class="card-icons">💳 🏦 🌐</div>
+                <div class="form-group">
+                    <label>Cardholder Name</label>
+                    <input type="text" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="XXXX XXXX XXXX XXXX">
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <div class="form-group" style="flex: 1;">
+                        <label>Expiry Date</label>
+                        <input type="text" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>CVV</label>
+                        <input type="text" placeholder="123">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block" id="payCardBtn">Pay <span class="checkout-total-display"></span></button>
+            </div>
+
+            <div class="tab-content" id="tab-bank">
+                <p style="margin-bottom: 1rem; color: var(--text-secondary);">Please transfer the total amount to our London bank account provided below. Use your name as the reference.</p>
+                <div class="bank-details-box">
+                    <p>Bank: <span>Barclays London Branch</span></p>
+                    <p>Account Name: <span>Coffee & Friends Ltd.</span></p>
+                    <p>Sort Code: <span>20-34-56</span></p>
+                    <p>Account No: <span>10293847</span></p>
+                </div>
+                <button class="btn btn-primary btn-block" id="payBankBtn">I've made the transfer (<span class="checkout-total-display"></span>)</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Coffee <span>&</span> Friends</div>
+            <p>&copy; 2026 Coffee & Friends. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="order.js"></script>
+</body>
+</html>
